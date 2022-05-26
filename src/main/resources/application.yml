@@ -15,10 +15,21 @@ spring:
         health-check-interval: 10s
   boot:
     admin:
+      notify:
+        mail:
+          # 收件人， 多个中间用,分隔
+          to: 2450179744@qq.com
+          # 发件人
+          from: 2450179744@qq.com
       discovery:
         ignored-services: consul
       ui:
         title: 微服务监控
+  # 微服务挂了的时候邮件通知
+  mail:
+    host: smtp.qq.com
+    username: 2450179744@qq.com
+    password: eerkvnjlojxwdhji
 
 management:
   health:
